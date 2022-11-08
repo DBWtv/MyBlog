@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for item in blog %}
-    <p> {{item.title}} </p>
+    <div class="card text-center w-50">
+        <div class="card-header">
+          {{item.title}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{item.content|safe|linebreaks|truncatewords:50}}</p>
+          <div class="media text-center">
+            {% if item.photo %}
+                <img src="{{ item.photo.url }}" width="350" height="350">
+            {% else %}
+                <img src="https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg" width="350">
+            {% endif %}
+          </div>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{item.created_at}}
+        </div>
+      </div>
     {% endfor %}
 {% endblock content %}

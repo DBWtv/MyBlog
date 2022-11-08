@@ -6,6 +6,4 @@ def index(request):
     context = {
         'blog': blog
     }
-    print('blog:', blog)
-    print('context:', context)
     return render (request, 'mainpage/index.html', context)
