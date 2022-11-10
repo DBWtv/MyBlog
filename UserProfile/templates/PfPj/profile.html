@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for item in profile %}
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{item.user_id}}</li>
+            <li class="list-group-item">{{item.about_yourself}}</li>
+            <li class="list-group-item">{{item.email}}</li>
+            <li class="list-group-item">{{item.phone_number}}</li>
+          </ul>
+        </div>
+
+    {% endfor %}
+{% endblock content %}
